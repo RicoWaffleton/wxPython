@@ -1,3 +1,4 @@
+#Adding Message Dialog aka popup box
 #Base Imported from 3
 import wx
 
@@ -17,7 +18,16 @@ class window(wx.Frame):
 		menubar.Append(first_menu, "Menu 1")
 		menubar.Append(second_menu, "Menu 2")
 		self.SetMenuBar(menubar)
-
+		#Create popup box at start
+		popup = wx.MessageDialog(None, 'Do you really want to run me?', 'Title', wx.YES_NO)
+		#Store response in variable
+		answer = popup.ShowModal()
+		#close out of popup once responded
+		popup.Destroy()
+		#print(answer) to test what each response value is
+		#if response is no, kill the app
+		if answer == 5104:
+			self.closeWindow()
 
 	def exitButton(self, event):
 		self.Close(True)
