@@ -1,3 +1,5 @@
+#Creates names and resizes a window, thats it
+
 import wx
 
 class garbo(wx.Frame):
